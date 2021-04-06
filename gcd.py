@@ -19,7 +19,12 @@ def bezout():
      
     count = len(divideList) - 2
     while count != 0:
-        
+        for i in range(count):
+            for j in range(4):
+                if divideList[i][3] == divideList[count][j]:
+                    divideList[count][j] = "({divide} - {divisor} * {quot})".format(divide=divideList[i][0], divisor=divideList[i][1], quot=divideList[i][2])
+                    print("{remain} = {divide} - {divisor} * {quot}".format(remain=divideList[i][3], divide=divideList[i][0], divisor=divideList[i][1], quot=divideList[i][2]))
+
 
 num1 = int(input("Enter the larger number: "))
 num2 = int(input("Enter the smaller number: "))
